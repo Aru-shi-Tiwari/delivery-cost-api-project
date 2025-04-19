@@ -6,6 +6,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.json({
+    message: "Delivery Cost Calculator API",
+    endpoints: {
+      calculate: "POST /calculate-delivery-cost"
+    }
+  });
+});
 // Graph structure with distances
 const graph = {
     "C1": { "C2": 4.0, "L1": 3.0 },
